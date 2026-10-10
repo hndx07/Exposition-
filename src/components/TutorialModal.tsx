@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Footprints, MessageSquare, Hand, Sparkles, Check } from 'lucide-react';
+import { Footprints, MessageSquare, Hand, Flame, Check } from 'lucide-react';
 import { playTapSound, playSuccessChime } from '../utils/audio';
 
 interface TutorialModalProps {
@@ -54,7 +54,7 @@ export const TutorialModal: React.FC<TutorialModalProps> = ({ isOpen, onClose })
         {/* Header Decor */}
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <Sparkles className="w-5 h-5 text-[#3B3355]" />
+            <Flame className="w-5 h-5 text-amber-500" />
             <h3 className="font-heading font-extrabold text-lg tracking-wide">
               Quick Guide (3 Steps)
             </h3>

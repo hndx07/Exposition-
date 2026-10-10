@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle2, AlertCircle, Volume2, ShieldAlert, Cpu, Receipt } from 'lucide-react';
+import { Flame, CheckCircle2, AlertCircle, Volume2, ShieldAlert, Cpu, Receipt } from 'lucide-react';
 import { MajorType, ClueItem } from '../../types/game';
 import { WING_CHALLENGES } from '../../constants/storyData';
 import { playTapSound, playFlickSound, playSuccessChime, triggerHaptic } from '../../utils/audio';
@@ -271,7 +271,7 @@ export const Chapter3Wings: React.FC<Chapter3WingsProps> = ({
         <div className="bg-[#FFF1B8] p-3.5 rounded-2xl border-3 border-[#3B3355] shadow-md my-2 animate-fade-in space-y-1.5">
           <div className="flex items-center justify-between">
             <span className="font-heading font-black text-xs text-[#3B3355] flex items-center gap-1">
-              <Sparkles className="w-4 h-4 text-amber-700" />
+              <Flame className="w-4 h-4 text-amber-600" />
               <span>3 Evidence Fragments Unlocked!</span>
             </span>
             <span className="text-[11px] font-bold px-2 py-0.5 rounded-full bg-white border border-[#3B3355]/20 text-indigo-700">
@@ -291,7 +291,7 @@ export const Chapter3Wings: React.FC<Chapter3WingsProps> = ({
           className="w-full py-3.5 px-4 rounded-2xl bg-[#CDEFD9] hover:bg-[#b8e8c6] active:scale-95 text-[#3B3355] font-heading font-extrabold text-sm border-3 border-[#3B3355] shadow-[0_3px_0_#3B3355] flex items-center justify-center gap-2 transition-all"
         >
           <span>Claim 20 Pts & Head to Library</span>
-          <Sparkles className="w-4 h-4 text-[#3B3355]" />
+          <Flame className="w-4 h-4 text-amber-600" />
         </button>
       ) : (
         <div className="text-center text-[11px] text-[#3B3355]/60 font-medium py-1">

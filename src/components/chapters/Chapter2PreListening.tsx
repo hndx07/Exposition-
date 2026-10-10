@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, CheckCircle, XCircle, Sparkles, BookOpen } from 'lucide-react';
+import { Volume2, VolumeX, CheckCircle, XCircle, Flame, BookOpen } from 'lucide-react';
 import { CH2_PRE_LISTENING_ITEMS, PreListeningItem } from '../../constants/storyData';
 import { playTapSound, playSuccessChime, playErrorBuzz } from '../../utils/audio';
 import { speakText, stopSpeaking } from '../../utils/speech';
@@ -174,7 +174,7 @@ export const Chapter2PreListening: React.FC<Chapter2PreListeningProps> = ({
             className="w-full py-3 px-4 rounded-2xl bg-[#FFF1B8] hover:bg-[#FFE894] active:scale-95 text-[#3B3355] font-heading font-extrabold text-xs border-3 border-[#3B3355] shadow-[0_3px_0_#3B3355] flex items-center justify-center gap-2"
           >
             <span>Unlock & Next Section</span>
-            <Sparkles className="w-4 h-4" />
+            <Flame className="w-4 h-4 text-amber-500" />
           </button>
         </div>
       ) : (

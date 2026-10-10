@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Volume2, VolumeX, ChevronRight, Sparkles } from 'lucide-react';
+import { Volume2, VolumeX, ChevronRight, Flame } from 'lucide-react';
 import { NPCId, DialogueChoice } from '../types/game';
 import { playTapSound, playBlipSound } from '../utils/audio';
 import { speakText, stopSpeaking } from '../utils/speech';

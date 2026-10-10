@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Volume2, VolumeX, BookOpen, CheckCircle, XCircle, Sparkles, HelpCircle } from 'lucide-react';
+import { Volume2, VolumeX, BookOpen, CheckCircle, XCircle, Flame, HelpCircle } from 'lucide-react';
 import { PODCAST_DATA, LIBRARY_QUESTIONS, LibraryQuestion } from '../../constants/storyData';
 import { playTapSound, playSuccessChime, playErrorBuzz } from '../../utils/audio';
 import { speakText, stopSpeaking } from '../../utils/speech';
@@ -321,7 +321,7 @@ export const Chapter4Library: React.FC<Chapter4LibraryProps> = ({ speechRate, on
             className="w-full py-3 px-4 rounded-2xl bg-[#FFF1B8] hover:bg-[#FFE894] active:scale-95 text-[#3B3355] font-heading font-extrabold text-xs border-3 border-[#3B3355] shadow-[0_3px_0_#3B3355] flex items-center justify-center gap-2"
           >
             <span>{currentQIndex < LIBRARY_QUESTIONS.length - 1 ? 'Next Question' : 'Complete Library Study'}</span>
-            <Sparkles className="w-4 h-4" />
+            <Flame className="w-4 h-4 text-amber-500" />
           </button>
         </div>
       ) : (

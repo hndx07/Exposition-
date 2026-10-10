@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Sparkles, Trophy, Award, Send, CheckCircle, Smartphone, ArrowRight } from 'lucide-react';
+import { Flame, Trophy, Award, Send, CheckCircle, Smartphone, ArrowRight } from 'lucide-react';
 import { GameState, MajorType } from '../../types/game';
 import { DEBATE_ROUNDS, WEB3FORMS_ACCESS_KEY, WING_CHALLENGES } from '../../constants/storyData';
 import {
@@ -320,7 +320,7 @@ export const Chapter6Auditorium: React.FC<Chapter6AuditoriumProps> = ({
             className="w-full py-3.5 px-4 rounded-2xl bg-[#CDEFD9] hover:bg-[#b8e8c6] active:scale-95 text-[#3B3355] font-heading font-extrabold text-sm border-3 border-[#3B3355] shadow-[0_3px_0_#3B3355] flex items-center justify-center gap-2"
           >
             <span>Deliver Closing Speech to School</span>
-            <Sparkles className="w-4 h-4 text-[#3B3355]" />
+            <Flame className="w-4 h-4 text-amber-600" />
           </button>
         </div>
       )}

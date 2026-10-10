@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ArrowRight, Sparkles, Smartphone, AlertTriangle, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Flame, Smartphone, AlertTriangle, ShieldCheck } from 'lucide-react';
 import { LOGO_URL, MAJORS } from '../../constants/storyData';
 import { MajorType } from '../../types/game';
 import { playTapSound, playSuccessChime, triggerHaptic } from '../../utils/audio';
@@ -228,7 +228,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({ onStartGame }) => {
               onClick={handleStartFinal}
               className="w-full py-3.5 px-4 rounded-2xl bg-[#FFF1B8] hover:bg-[#FFE894] active:scale-95 text-[#3B3355] font-heading font-extrabold text-sm border-3 border-[#3B3355] shadow-[0_4px_0_#3B3355] flex items-center justify-center gap-2 transition-all"
             >
-              <Sparkles className="w-4 h-4 text-[#3B3355]" />
+              <Flame className="w-4 h-4 text-amber-500" />
               <span>Enter School Courtyard (Chapter 1)</span>
             </button>
           </div>

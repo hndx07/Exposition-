@@ -391,8 +391,8 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
         <div className="w-10 h-11 rounded-2xl bg-white border-3 border-[#3B3355] flex items-center justify-center shadow-lg relative">
           <span className="text-xl">🎒</span>
           {/* Vocational badge on collar */}
-          <span className="absolute -top-1 -right-1 w-3.5 h-3.5 rounded-full bg-[#FFF1B8] border border-[#3B3355] flex items-center justify-center text-[7px] font-bold">
-            ★
+          <span className="absolute -top-1 -right-1 w-4 h-4 rounded-full bg-[#FFF1B8] border border-[#3B3355] flex items-center justify-center text-[9px] shadow-sm">
+            🔥
           </span>
         </div>
       </div>

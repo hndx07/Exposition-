@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, CheckCircle2, RotateCcw, ArrowDown } from 'lucide-react';
+import { Flame, CheckCircle2, RotateCcw, ArrowDown } from 'lucide-react';
 import { EXPOSITION_BLOCKS, ExpositionBlock } from '../../constants/storyData';
 import { playTapSound, playCardSnapSound, playSuccessChime, playErrorBuzz } from '../../utils/audio';
 
@@ -206,7 +206,7 @@ export const Chapter5WritingRoom: React.FC<Chapter5WritingRoomProps> = ({ onComp
             className="w-full py-3.5 px-4 rounded-2xl bg-[#FFF1B8] hover:bg-[#FFE894] active:scale-95 text-[#3B3355] font-heading font-extrabold text-sm border-3 border-[#3B3355] shadow-[0_3px_0_#3B3355] flex items-center justify-center gap-2"
           >
             <span>Proceed to Auditorium Stage</span>
-            <Sparkles className="w-4 h-4" />
+            <Flame className="w-4 h-4 text-amber-500" />
           </button>
         </div>
       ) : (

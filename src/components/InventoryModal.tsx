@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { X, BookOpen, Award, Sparkles, Volume2, Lock, CheckCircle2 } from 'lucide-react';
+import { X, BookOpen, Award, Flame, Volume2, Lock, CheckCircle2 } from 'lucide-react';
 import { GameState } from '../types/game';
 import { playTapSound } from '../utils/audio';
 import { speakText } from '../utils/speech';

@@ -48,7 +48,7 @@ export const SparkleOverlay: React.FC<SparkleOverlayProps> = ({ show, message })
             color: p.color,
           }}
         >
-          ✨
+          🔥
         </div>
       ))}
 

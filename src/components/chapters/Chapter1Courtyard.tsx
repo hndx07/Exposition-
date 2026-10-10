@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react';
-import { Sparkles, ArrowLeft, ArrowRight, CheckCircle, XCircle } from 'lucide-react';
+import { Flame, ArrowLeft, ArrowRight, CheckCircle, XCircle } from 'lucide-react';
 import { CH1_FACT_OPINION_CARDS, FactOpinionCard } from '../../constants/storyData';
 import { playFlickSound, playSuccessChime, playErrorBuzz, playTapSound } from '../../utils/audio';
 
@@ -180,7 +180,7 @@ export const Chapter1Courtyard: React.FC<Chapter1CourtyardProps> = ({ onComplete
             className="w-full py-3 px-4 rounded-2xl bg-[#FFF1B8] hover:bg-[#FFE894] active:scale-95 text-[#3B3355] font-heading font-extrabold text-sm border-3 border-[#3B3355] shadow-[0_3px_0_#3B3355] transition-all flex items-center justify-center gap-2"
           >
             <span>Continue Investigation</span>
-            <Sparkles className="w-4 h-4" />
+            <Flame className="w-4 h-4 text-amber-500" />
           </button>
         </div>
       )}
