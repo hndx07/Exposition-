@@ -35,42 +35,52 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
 
   const containerRef = useRef<HTMLDivElement>(null);
   const touchStartRef = useRef<{ x: number; y: number; time: number } | null>(null);
+  const playerPosRef = useRef<Position>(playerPos);
+  const onMovingChangeRef = useRef(onMovingChange);
+
+  useEffect(() => {
+    onMovingChangeRef.current = onMovingChange;
+  }, [onMovingChange]);
+
+  // Clean reset on unmount
+  useEffect(() => {
+    return () => {
+      onMovingChangeRef.current(false);
+    };
+  }, []);
 
   // Smooth walking animation towards targetPos
   useEffect(() => {
+    if (!isMoving) return;
+
     let animFrame: number;
 
     const animateMovement = () => {
-      setPlayerPos((prev) => {
-        const dx = targetPos.x - prev.x;
-        const dy = targetPos.y - prev.y;
-        const distance = Math.hypot(dx, dy);
+      const current = playerPosRef.current;
+      const dx = targetPos.x - current.x;
+      const dy = targetPos.y - current.y;
+      const distance = Math.hypot(dx, dy);
 
-        if (distance > 3) {
-          const speed = 4.5;
-          const nx = prev.x + (dx / distance) * speed;
-          const ny = prev.y + (dy / distance) * speed;
-          setFacingLeft(dx < 0);
-          return { x: nx, y: ny };
-        } else {
-          setIsMoving(false);
-          onMovingChange(false);
-          return targetPos;
-        }
-      });
-
-      if (isMoving) {
+      if (distance > 3) {
+        const speed = 4.5;
+        const nx = current.x + (dx / distance) * speed;
+        const ny = current.y + (dy / distance) * speed;
+        playerPosRef.current = { x: nx, y: ny };
+        setPlayerPos({ x: nx, y: ny });
+        setFacingLeft(dx < 0);
         animFrame = requestAnimationFrame(animateMovement);
+      } else {
+        playerPosRef.current = targetPos;
+        setPlayerPos(targetPos);
+        setIsMoving(false);
+        onMovingChangeRef.current(false);
       }
     };
 
-    if (isMoving) {
-      onMovingChange(true);
-      animFrame = requestAnimationFrame(animateMovement);
-    }
+    animFrame = requestAnimationFrame(animateMovement);
 
     return () => cancelAnimationFrame(animFrame);
-  }, [isMoving, targetPos, onMovingChange]);
+  }, [isMoving, targetPos]);
 
   // Handle pointer down (tracking for tap vs flick)
   const handlePointerDown = (e: React.PointerEvent) => {
@@ -97,16 +107,17 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
     if (dist > 35 && dt < 280) {
       playFlickSound();
       triggerHaptic(25);
-      setDashTrail({ ...playerPos });
+      setDashTrail({ ...playerPosRef.current });
       setTimeout(() => setDashTrail(null), 300);
 
       // Dash in swipe direction
       const dashDist = 85;
       const angle = Math.atan2(dy, dx);
-      const dashX = Math.max(30, Math.min(350, playerPos.x + Math.cos(angle) * dashDist));
-      const dashY = Math.max(80, Math.min(500, playerPos.y + Math.sin(angle) * dashDist));
+      const dashX = Math.max(30, Math.min(350, playerPosRef.current.x + Math.cos(angle) * dashDist));
+      const dashY = Math.max(80, Math.min(500, playerPosRef.current.y + Math.sin(angle) * dashDist));
 
       setTargetPos({ x: dashX, y: dashY });
+      onMovingChangeRef.current(true);
       setIsMoving(true);
       touchStartRef.current = null;
       return;
@@ -119,6 +130,7 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
 
     playTapSound();
     setTargetPos({ x: clampedX, y: clampedY });
+    onMovingChangeRef.current(true);
     setIsMoving(true);
     touchStartRef.current = null;
   };

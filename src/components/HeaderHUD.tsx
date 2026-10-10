@@ -104,16 +104,17 @@ export const HeaderHUD: React.FC<HeaderHUDProps> = ({
               )}
             </button>
 
-            {/* Speech Rate Toggle */}
+            {/* Speech Rate & Accent Toggle */}
             <button
               onClick={() => {
                 playTapSound();
                 onToggleRate();
               }}
-              className="px-2 py-1 rounded-2xl bg-white/10 hover:bg-white/20 text-[10px] font-bold text-[#CDEFD9]"
-              title="Toggle speech speed"
+              className="px-2 py-1 rounded-2xl bg-white/10 hover:bg-white/20 text-[10px] font-bold text-[#CDEFD9] flex items-center gap-0.5"
+              title="British Voice (en-GB) Speed"
             >
-              {gameState.speechRate}x
+              <span>🇬🇧</span>
+              <span>{gameState.speechRate}x</span>
             </button>
 
             {/* Sound Mute */}

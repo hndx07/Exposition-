@@ -141,7 +141,7 @@ export const DialogueBox: React.FC<DialogueBoxProps> = ({
                 ? 'bg-[#CDEFD9] text-emerald-950 scale-105'
                 : 'bg-white hover:bg-slate-100 text-[#3B3355]'
             }`}
-            title="Read aloud with Web Speech"
+            title="Read aloud with British Voice (en-GB)"
           >
             {isSpeaking ? (
               <>
