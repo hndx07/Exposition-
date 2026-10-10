@@ -105,7 +105,7 @@ export const Chapter3Wings: React.FC<Chapter3WingsProps> = ({
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-4 flex flex-col justify-between min-h-[580px] bg-white rounded-3xl border-4 border-[#3B3355] shadow-2xl relative select-none">
+    <div className="w-full max-w-md mx-auto p-4 flex flex-col justify-between min-h-[540px] bg-white rounded-3xl border-4 border-[#3B3355] shadow-2xl relative select-none overflow-y-auto">
       {/* Header */}
       <div>
         <div className="flex items-center justify-between mb-1">

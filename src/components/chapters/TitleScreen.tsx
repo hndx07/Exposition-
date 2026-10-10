@@ -37,7 +37,7 @@ export const TitleScreen: React.FC<TitleScreenProps> = ({ onStartGame }) => {
   };
 
   return (
-    <div className="relative min-h-screen w-full flex flex-col justify-between p-4 max-w-md mx-auto text-[#3B3355]">
+    <div className="relative w-full min-h-screen flex flex-col justify-between p-4 max-w-md mx-auto text-[#3B3355] overflow-y-auto">
       {/* Background Decor */}
       <div className="absolute top-12 left-4 w-28 h-10 bg-white/40 rounded-full blur-xl pointer-events-none anim-cloud-slow" />
       <div className="absolute top-36 right-4 w-36 h-12 bg-[#FFF1B8]/40 rounded-full blur-xl pointer-events-none anim-cloud-fast" />

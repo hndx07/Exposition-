@@ -456,7 +456,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen w-full bg-[#3B3355] flex items-center justify-center p-0 sm:p-4 text-[#3B3355] relative overflow-hidden">
+    <div className="min-h-screen w-full bg-[#3B3355] flex flex-col items-center justify-start sm:justify-center p-0 sm:py-6 sm:px-4 text-[#3B3355] relative overflow-x-hidden overflow-y-auto">
       {/* Sparkle particle overlay */}
       <SparkleOverlay show={sparkleMessage !== null} message={sparkleMessage || undefined} />
 
@@ -480,14 +480,14 @@ export default function App() {
         initialTab={inventoryInitialTab}
       />
 
-      {/* Mobile-first Container */}
-      <div className="w-full max-w-md min-h-screen sm:min-h-[640px] sm:max-h-[92vh] flex flex-col justify-between relative bg-gradient-to-b from-[#CFE6FF]/30 to-[#3B3355] sm:rounded-3xl shadow-2xl overflow-hidden border-0 sm:border-4 sm:border-white/20">
+      {/* Mobile-first Container (Scrollable) */}
+      <div className="w-full max-w-md min-h-screen sm:min-h-0 flex flex-col relative bg-gradient-to-b from-[#CFE6FF]/30 to-[#3B3355] sm:rounded-3xl shadow-2xl overflow-y-auto border-0 sm:border-4 sm:border-white/20">
         {/* CHAPTER 0: TITLE & PROLOGUE */}
         {gameState.chapter === 0 ? (
           <TitleScreen onStartGame={handleStartGame} />
         ) : (
           /* ACTIVE GAME VIEW */
-          <div className="flex-1 flex flex-col justify-between relative p-2 sm:p-3">
+          <div className="flex-1 flex flex-col relative p-2 sm:p-3 overflow-y-auto">
             {/* Top HUD */}
             <HeaderHUD
               gameState={gameState}
@@ -513,7 +513,7 @@ export default function App() {
             />
 
             {/* MAIN STAGE CONTENT (Map vs Chapter Activity) */}
-            <main className="flex-1 flex flex-col justify-center pt-20 pb-4">
+            <main className="flex-1 flex flex-col pt-20 pb-8 overflow-y-auto">
               {activeScene === 'map' ? (
                 <div className="flex-1 flex flex-col justify-between">
                   {/* Quick Chapter Banner on Map */}

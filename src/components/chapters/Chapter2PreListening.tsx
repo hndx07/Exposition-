@@ -70,7 +70,7 @@ export const Chapter2PreListening: React.FC<Chapter2PreListeningProps> = ({
   };
 
   return (
-    <div className="w-full max-w-md mx-auto p-4 flex flex-col justify-between min-h-[580px] bg-[#FFF1B8]/40 rounded-3xl border-4 border-[#3B3355] shadow-2xl relative select-none">
+    <div className="w-full max-w-md mx-auto p-4 flex flex-col justify-between min-h-[540px] bg-[#FFF1B8]/40 rounded-3xl border-4 border-[#3B3355] shadow-2xl relative select-none overflow-y-auto">
       {/* Top Header */}
       <div>
         <div className="flex items-center justify-between mb-1">

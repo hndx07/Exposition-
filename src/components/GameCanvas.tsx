@@ -141,7 +141,7 @@ export const GameCanvas: React.FC<GameCanvasProps> = ({
       ref={containerRef}
       onPointerDown={handlePointerDown}
       onPointerUp={handlePointerUp}
-      className="relative w-full h-[580px] bg-[#CDEFD9] rounded-3xl overflow-hidden border-4 border-[#3B3355] shadow-2xl select-none touch-none"
+      className="relative w-full h-[520px] sm:h-[580px] bg-[#CDEFD9] rounded-3xl overflow-hidden border-4 border-[#3B3355] shadow-2xl select-none touch-manipulation"
       style={{
         backgroundImage: `radial-gradient(#3B3355 1px, transparent 1px)`,
         backgroundSize: '24px 24px',

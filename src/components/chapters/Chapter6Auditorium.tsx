@@ -146,7 +146,7 @@ export const Chapter6Auditorium: React.FC<Chapter6AuditoriumProps> = ({
   const majorClue = gameState.major ? WING_CHALLENGES[gameState.major].twistClue : '';
 
   return (
-    <div className="w-full max-w-md mx-auto p-4 flex flex-col justify-between min-h-[590px] bg-white rounded-3xl border-4 border-[#3B3355] shadow-2xl relative select-none">
+    <div className="w-full max-w-md mx-auto p-4 flex flex-col justify-between min-h-[540px] bg-white rounded-3xl border-4 border-[#3B3355] shadow-2xl relative select-none overflow-y-auto">
       {/* ================= STAGE 1: DEBATE ROUNDS ================= */}
       {phase === 'debate' && (
         <div className="flex-1 flex flex-col justify-between">

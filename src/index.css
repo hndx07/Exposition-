@@ -16,7 +16,30 @@
     font-family: 'Nunito', system-ui, -apple-system, sans-serif;
     touch-action: manipulation;
     -webkit-tap-highlight-color: transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Rounded sleek scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: rgba(59, 51, 85, 0.1);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 241, 184, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 241, 184, 0.7);
 }
 
 /* Rounded typography */
