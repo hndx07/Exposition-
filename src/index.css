@@ -1,0 +1,106 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --color-peach: #FFD6C9;
+    --color-mint: #CDEFD9;
+    --color-sky: #CFE6FF;
+    --color-lilac: #E3D4FF;
+    --color-butter: #FFF1B8;
+    --color-ink: #3B3355;
+  }
+
+  body {
+    background-color: #3B3355;
+    color: #3B3355;
+    font-family: 'Nunito', system-ui, -apple-system, sans-serif;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+/* Rounded typography */
+h1, h2, h3, h4, .font-heading {
+  font-family: 'Fredoka', 'Nunito', system-ui, sans-serif;
+}
+
+/* Custom animations */
+@keyframes bob {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-5px); }
+}
+
+@keyframes breathe {
+  0%, 100% { transform: scale(1) translateY(0); }
+  50% { transform: scale(1.02, 0.98) translateY(-2px); }
+}
+
+@keyframes floatCloud {
+  0% { transform: translateX(-10%); }
+  50% { transform: translateX(10%); }
+  100% { transform: translateX(-10%); }
+}
+
+@keyframes sparkle {
+  0% { transform: scale(0) rotate(0deg); opacity: 0; }
+  50% { transform: scale(1.2) rotate(180deg); opacity: 1; }
+  100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20%, 60% { transform: translateX(-6px); }
+  40%, 80% { transform: translateX(6px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(255, 241, 184, 0.6)); }
+  50% { filter: drop-shadow(0 0 14px rgba(255, 241, 184, 0.95)); }
+}
+
+.anim-bob {
+  animation: bob 2s ease-in-out infinite;
+}
+
+.anim-breathe {
+  animation: breathe 3s ease-in-out infinite;
+}
+
+.anim-cloud-slow {
+  animation: floatCloud 25s ease-in-out infinite;
+}
+
+.anim-cloud-fast {
+  animation: floatCloud 16s ease-in-out infinite reverse;
+}
+
+.anim-sparkle {
+  animation: sparkle 1.2s ease-out forwards;
+}
+
+.anim-shake {
+  animation: shake 0.4s ease-in-out;
+}
+
+.anim-pulse-glow {
+  animation: pulseGlow 2s ease-in-out infinite;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Custom scrollbar hide */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

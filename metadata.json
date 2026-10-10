@@ -1,0 +1,6 @@
+{
+  "name": "Muhiba Mystery: Say It, Prove It!",
+  "description": "A 2D mobile-first English analytical exposition mystery adventure game at SMK Muhammadiyah Bawang.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
